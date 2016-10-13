@@ -13,6 +13,15 @@ export const SET_FETCH_ERROR = 'SET_FETCH_ERROR';
 export const OPEN_DIALOG = 'OPEN_DIALOG';
 export const CLOSE_DIALOG = 'CLOSE_DIALOG';
 
+export const NAV_MENTOR = 'NAV_MENTOR';
+export const NAV_MENTEE = 'NAV_MENTEE';
+export const CHANGE_MENTEE_TAB = 'CHANGE_MENTEE_TAB';
+export const NAV_WEATHER = 'NAV_WEATHER';
+
+export const SET_ROLE = 'SET_ROLE';
+export const SET_MENTEE = 'SET_MENTEE';
+export const SET_MENTOR = 'SET_MENTOR';
+
 export const addLocation = (name) => ({
   type: ADD_LOCATION,
   id: generateId(),
@@ -74,3 +83,23 @@ export const openDialog = () => ({
 export const closeDialog = () => ({
   type: CLOSE_DIALOG
 });
+
+export const navMentor = (name) => ({
+  type: NAV_MENTOR,
+  name
+});
+
+export const navMentee = (name) => ({
+  type: NAV_MENTEE,
+  name
+});
+
+export const changeMenteeTab = (index) => ({
+  type: CHANGE_MENTEE_TAB,
+  index
+});
+
+export const navWeather = () => ({
+  type: NAV_WEATHER
+});
+

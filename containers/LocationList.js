@@ -13,7 +13,7 @@ const LocationList = ({locations, navigator}) => (
         key={location.id}
         navigator={navigator}
         {...location}
-      />
+      ></Location>
     }
   />
 );

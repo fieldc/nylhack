@@ -55,5 +55,13 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "d3": "^4.2.7",
+    "d3-axis": "^1.0.3",
+    "d3-scale": "^1.0.3",
+    "d3-time-format": "^2.0.2",
+    "react-faux-dom": "^3.0.0",
+    "twilio": "^2.11.0"
   }
 }

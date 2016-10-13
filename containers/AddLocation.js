@@ -19,10 +19,10 @@ const AddLocation = ({actions}) => {
   if (platform.isAndroid()) {
     button = (
       <Fab
-      onClick={actions.openDialog}
-      ripple
-      position='bottom right'>
-      <Icon icon='md-plus' />
+        onClick={actions.openDialog}
+        ripple
+        position='bottom right'>
+        <Icon icon='md-plus'/>
       </Fab>
     );
   } else {
@@ -33,8 +33,8 @@ const AddLocation = ({actions}) => {
 
   return (
     <div>
-    {button}
-    <AddLocationDialog />
+      {button}
+      <AddLocationDialog />
     </div>
   );
 };

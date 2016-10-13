@@ -83,7 +83,7 @@ const WeatherPage = ({
   if (isInvalid) {
     content = <div style={styles.invalid}>Unable to fetch data!</div>;
   } else if (isFetching) {
-    content = <ProgressCircular style={styles.progress} indeterminate />;
+    content = <ProgressCircular style={styles.progress} indeterminate/>;
   } else {
     content = (
       <div>
@@ -96,7 +96,7 @@ const WeatherPage = ({
         </div>
 
         <div style={{...styles.icon, color: weatherColor}}>
-          <WeatherIcon icon={icon} />
+          <WeatherIcon icon={icon}/>
         </div>
 
         <div style={styles.data}>
@@ -118,7 +118,7 @@ const WeatherPage = ({
           </div>
         </div>
 
-        <Forecast days={forecast} />
+        <Forecast days={forecast}/>
       </div>
     );
   }
