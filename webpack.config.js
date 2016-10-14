@@ -24,6 +24,16 @@ module.exports = {
     port: 9000,
     hot: true
   },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
+  cordova: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
 
   module: {
     loaders: [
@@ -36,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.css$/,

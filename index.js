@@ -23,30 +23,25 @@ const store = createStore(weatherApp,
   process.env.NODE_ENV === 'production'
     ? applyMiddleware(thunk)
     : applyMiddleware(thunk, logger)
-);
+ );
 
-import {addLocationAndFetchWeather} from './actions';
-
+import {addUserAndFetchToken} from './actions';
 [
-  'Tokyo',
-  'New York',
-  'Paris',
-  'Beijing',
-  'Sydney',
-  'Rio de Janeiro',
-  'Istanbul'
-].forEach((city) => store.dispatch(addLocationAndFetchWeather(city)));
+  'Jane',
+  'John'
+].forEach((user) => store.dispatch(addUserAndFetchToken(user)));
 
 const rootElement = document.getElementById('root');
 
-ons.ready(() => render(
-  <AppContainer>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </AppContainer>,
-  rootElement
-));
+ons.ready(() => {
+  window.generalChannel = {};
+  return render(<AppContainer>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </AppContainer>,
+      rootElement);
+});
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {

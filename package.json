@@ -1,7 +1,7 @@
 {
-  "name": "react-onsenui-redux-weather",
+  "name": "MentorMe",
   "version": "1.0.0",
-  "description": "Simple Weather App implemntation with Onsen UI React Components and Redux",
+  "description": "Mentor<->Mentee App for Agents",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --progress --content-base www/",
@@ -11,14 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/argelius/react-onsenui-redux-weather.git"
+    "url": "git+https://github.com/fieldc/nylhack.git"
   },
-  "author": "Andreas Argelius <andreas@argeli.us>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/argelius/react-onsenui-redux-weather/issues"
-  },
-  "homepage": "https://github.com/argelius/react-onsenui-redux-weather#readme",
+  "author": "The Apptastic Four",
+  "license": "Private",
+  "homepage": "https://github.com/fieldc/nylhack#readme",
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "babel-core": "^6.14.0",
@@ -57,10 +54,8 @@
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
-    "d3": "^4.2.7",
-    "d3-axis": "^1.0.3",
-    "d3-scale": "^1.0.3",
-    "d3-time-format": "^2.0.2",
+    "d3": "^3.5.0",
+    "rd3": "^0.7.2",
     "react-faux-dom": "^3.0.0",
     "twilio": "^2.11.0"
   }

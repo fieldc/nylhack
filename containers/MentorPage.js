@@ -9,8 +9,7 @@ import * as Actions from '../actions';
 import NavBar from '../components/NavBar';
 
 import {
-  Page
-  // ProgressCircular
+  Page, Row, Col, Fab, Icon, List, ListItem, ListHeader, Tabbar, Tab
 } from 'react-onsenui';
 
 const styles = {
@@ -66,18 +65,80 @@ const styles = {
 
 const MenteePage = ({
   navigator,
-  name
+  name,
+  index,
+  actions
 }) => {
-  return (
-    <Page renderToolbar={() => <NavBar backButton={true} title={`Welcome ${name}`} navigator={navigator} />}>
-      <div style={styles.main}>
-        Mentor View -{name}-
+  const mentees = [
+    {name: 'Dave', alert: true},
+    {name: 'Sam', alert: true}
+  ];
+  const renderAgents = (row, index) => {
+    return (<ListItem key={index}>
+      <div className='left'>
+        <span style={styles.mentee}>{row.name}</span>
       </div>
-    </Page>
-  );
+      <div className='right'>
+        {row.alert ? <Icon style={styles.invalid} icon='ion-android-warning'/> : ''}
+      </div>
+    </ListItem>);
+  };
+  const agentTab = () => {
+    return (
+      <Page renderToolbar={() => <NavBar backButton={false} title={`Welcome ${name}`} navigator={navigator} />}>
+        <div style={styles.main}>
+          <Row><Col>
+            <List dataSource={mentees}
+                  renderRow={renderAgents}
+                  renderHeader={() => <ListHeader>Your Mentees</ListHeader>}>
+            </List></Col>
+          </Row>
+          <Row>
+            <Col><Fab ripple={true}><Icon icon='ion-plus'></Icon></Fab></Col>
+          </Row>
+
+        </div>
+      </Page>
+    );
+  };
+  const groupProductivity = () => {
+    return (
+      <Page renderToolbar={() => <NavBar backButton={false} title={`Welcome ${name}`} navigator={navigator} />}>
+        <div style={styles.main}>
+          <Row>
+            <Col>Group Productivity</Col>
+          </Row>
+        </div>
+      </Page>
+    );
+  };
+  const tabList = () => {
+    return [
+      {
+        content: agentTab(),
+        tab: <Tab label='Mentees' icon='md-home' />
+      },
+      {
+        content: groupProductivity(),
+        tab: <Tab label='Group Performance' icon='ion-arrow-graph-up-right' />
+      }
+    ];
+  };
+  return (
+    <Tabbar
+      navigator={navigator}
+      index={index}
+      onPreChange={
+          (event) => {
+            if (event.index !== index) {
+              actions.changeMentorTab(event.index);
+            }
+          }}
+      renderTabs={tabList}
+    />);
 };
 
-const mapStateToProps = (state) => ({ name: state.mentor.name });
+const mapStateToProps = (state) => ({ name: state.mentor.name, index: state.mentor.index });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Actions, dispatch)

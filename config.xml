@@ -1,11 +1,11 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="io.onsen.weather" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>OnsenWeather</name>
+cd .<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.newyorklife.mentorme" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MentorMe</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Mentorship app for New York Life
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="dev@mentorme.newyorklife.com" href="http://newyorklife.com">
+        The Apptastic Four
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -24,4 +24,11 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <hook src="scripts/build.sh" type="before_prepare" />
+	<platform name="android">
+        <icon src="platforms/android/res/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="platforms/android/res/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="platforms/android/res/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="platforms/android/res/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="platforms/android/res/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
+    </platform>
 </widget>

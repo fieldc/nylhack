@@ -93,7 +93,7 @@ const callMentor = () => {
   notification.alert('Hangup!');
 };
 
-const mapStateToProps = (state) => ({call: state.call.detail});
+const mapStateToProps = (state) => ({call: state.call.detail, id: state.call.id});
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Actions, dispatch)

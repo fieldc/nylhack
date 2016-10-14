@@ -13,6 +13,22 @@ const round = (value, decimals = 1) => {
   return Math.round(x * value) / x;
 };
 
+export const getToken = (user, device) => {
+  var url = 'https://weff9l09bi.execute-api.us-east-1.amazonaws.com/staging/token?user=' + user + '&device=' + device;
+
+  console.log('requesting from url=' + url);
+  return fetch(url, {mode: 'cors'})
+    .then(response => {
+      if (response.status >= 400) {
+        console.log('error fetching');
+        return Promise.reject('Invalid response');
+      }
+      console.log(response);
+      return response.json();
+    })
+    .then(json => { return json; });
+};
+
 const apiCall = (url) => {
   return fetch(url)
     .then(response => {
